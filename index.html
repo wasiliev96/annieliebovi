@@ -8,10 +8,66 @@
     <title>Annie Liebovi Personal Site</title>
   </head>
   <body>
-    <header></header>
-    <div class="wrapper"></div>
+    <div class="preloader"></div>
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <h1>Annie Leibovi</h1>
+          <span class="logo_line"></span>
+          <span class="logo_description">Photographer</span>
+        </a>
+      </div>
+
+      <div class="navbar">
+        <ul>
+          <li class="menuItem menuItem_active">
+            <a href="#">Home</a>
+            <div class="blind"></div>
+          </li>
+          <li class="menuItem">
+            <a href="#">About</a>
+          </li>
+          <li class="menuItem">
+            <a href="#">My work</a>
+          </li>
+          <li class="menuItem">
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div class="wrapper">
+      <div class="gallery">
+        <div class="gallery_photo">
+          <img src="assets/images/taburette.png" alt="taburette">
+        </div>
+        <div class="gallery_photo">
+          <img src="assets/images/arc.png" alt="taburette">
+        </div>
+        <div class="gallery_photo">
+          <img src="assets/images/boy_in_mask.png" alt="taburette">
+        </div>
+      </div>
+    </div>
     <footer></footer>
     <script src="js/jquery/jquery-3.4.1.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+      $(document).ready(function() {
+
+        // menu items toggle
+        $(".menuItem").click(function() {
+          $(".menuItem").removeClass("menuItem_active");
+          $(this).addClass("menuItem_active");
+
+// PRELOADER GOODS
+// TODO: customize preloader 
+          $(".preloader").addClass("preloader_active");
+          setTimeout(function() {
+            $(".preloader").removeClass("preloader_active");
+          }, 500);
+        });
+      });
+    </script>
   </body>
 </html>
