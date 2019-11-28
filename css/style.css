@@ -1,0 +1,38 @@
+/* Fonts */
+@font-face {
+  font-family: "Futura BK BT Book";
+  src: url("/assets/fonts/futura_bk_bt_book.ttf") format("ttf");
+}
+/* Colors */
+:root {
+  --color_basic__light: #ffffff;
+  --color_basic__dark: #403f43;
+  --color_secondary: #e6e6e9;
+  --color_secondary__lighten: #edeeef;
+  --color_secondary__darken: #dbdbdf;
+  --color_accent: #ff0000;
+}
+
+/* Other styles */
+body {
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 240;
+}
+h1 {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 3rem;
+}
+h2 {
+  font-family: "Futura BK BT Book", sans-serif;
+  font-size: 2rem;
+}
+h3 {
+  font-family: "Futura BK BT Book", sans-serif;
+  font-size: 1.5rem;
+}
+h3 {
+  font-family: "Futura BK BT Book", sans-serif;
+  font-size: 1rem;
+}
