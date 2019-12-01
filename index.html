@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/style.css" />
+    <link href="assets/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <title>Annie Liebovi Personal Site</title>
   </head>
   <body>
-    <div class="preloader"></div>
+    <!-- <div class="preloader"></div> -->
     <header>
       <div class="logo">
         <a href="index.html">
@@ -17,55 +18,69 @@
           <span class="logo_description">Photographer</span>
         </a>
       </div>
-
-      <div class="navbar">
-        <ul>
-          <li class="menuItem menuItem_active">
-            <a href="#">Home</a>
-            <div class="blind"></div>
-          </li>
-          <li class="menuItem">
-            <a href="#">About</a>
-          </li>
-          <li class="menuItem">
-            <a href="#">My work</a>
-          </li>
-          <li class="menuItem">
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
+      <ul class="navbar">
+        <li class="navbar_item navbar_item__active">
+          <a href="#">Home</a>
+          <div class="blind"></div>
+        </li>
+        <li class="navbar_item">
+          <a href="#">About</a>
+        </li>
+        <li class="navbar_item">
+          <a href="#">My&nbsp;work</a>
+        </li>
+        <li class="navbar_item">
+          <a href="#">Contact</a>
+        </li>
+      </ul>
     </header>
     <div class="wrapper">
-      <div class="gallery">
-        <div class="gallery_photo">
-          <img src="assets/images/taburette.png" alt="taburette">
-        </div>
-        <div class="gallery_photo">
-          <img src="assets/images/arc.png" alt="taburette">
-        </div>
-        <div class="gallery_photo">
-          <img src="assets/images/boy_in_mask.png" alt="taburette">
-        </div>
-      </div>
+      <ul id="gallery">
+        <li class="gallery-photo">
+          <a href="#">
+            <img src="assets/images/taburette.png" alt="taburette" />
+            <div class="gallery-photo_overlay">
+              <p>View</p>
+            </div>
+          </a>
+        </li>
+        <li class="gallery-photo">
+          <a href="#">
+            <img src="assets/images/arc.png" alt="arc" />
+            <div class="gallery-photo_overlay">View</div>
+          </a>
+        </li>
+        <li class="gallery-photo">
+          <a href="#">
+            <img src="assets/images/boy_in_mask.png" alt="boy in mask" />
+            <div class="gallery-photo_overlay">View</div>
+          </a>
+        </li>
+      </ul>
     </div>
-    <footer></footer>
+    <footer>
+      <div class="social_buttons">
+        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a>
+      </div>
+    </footer>
     <script src="js/jquery/jquery-3.4.1.min.js"></script>
     <script src="js/script.js"></script>
     <script>
       $(document).ready(function() {
-
         // menu items toggle
-        $(".menuItem").click(function() {
-          $(".menuItem").removeClass("menuItem_active");
-          $(this).addClass("menuItem_active");
+        $(".navbar_item").mousedown(function() {
+          $(".navbar_item").removeClass("navbar_item__active");
+          $(this).addClass("navbar_item__active");
 
-// PRELOADER GOODS
-// TODO: customize preloader 
-          $(".preloader").addClass("preloader_active");
-          setTimeout(function() {
-            $(".preloader").removeClass("preloader_active");
-          }, 500);
+          // PRELOADER GOODS
+          // TODO: customize preloader
+          // $(".preloader").addClass("preloader_active");
+          // setTimeout(function() {
+          //   $(".preloader").removeClass("preloader_active");
+          // }, 500);
         });
       });
     </script>
