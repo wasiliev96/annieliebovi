@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/style.css" />
-    <link href="assets/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link
+      href="assets/libs/font-awesome/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
     <title>Annie Liebovi Personal Site</title>
   </head>
   <body>
     <!-- <div class="preloader"></div> -->
     <header>
-      <div class="logo">
+      <div id="logo">
         <a href="index.html">
           <h1>Annie Leibovi</h1>
           <span class="logo_line"></span>
@@ -20,60 +23,52 @@
       </div>
       <ul class="navbar">
         <li class="navbar_item navbar_item__active">
-          <a href="#">Home</a>
+          <a href="./pages/home/home.html">Home</a>
           <div class="blind"></div>
         </li>
         <li class="navbar_item">
-          <a href="#">About</a>
+          <a href="./pages/about/about.html">About</a>
         </li>
         <li class="navbar_item">
-          <a href="#">My&nbsp;work</a>
+          <a href="./pages/mywork/mywork.html">My&nbsp;work</a>
         </li>
         <li class="navbar_item">
-          <a href="#">Contact</a>
+          <a href="./pages/contacts/contacts.html">Contact</a>
         </li>
       </ul>
     </header>
-    <div class="wrapper">
-      <ul id="gallery">
-        <li class="gallery-photo">
-          <a href="#">
-            <img src="assets/images/taburette.png" alt="taburette" />
-            <div class="gallery-photo_overlay">
-              <p>View</p>
-            </div>
-          </a>
-        </li>
-        <li class="gallery-photo">
-          <a href="#">
-            <img src="assets/images/arc.png" alt="arc" />
-            <div class="gallery-photo_overlay">View</div>
-          </a>
-        </li>
-        <li class="gallery-photo">
-          <a href="#">
-            <img src="assets/images/boy_in_mask.png" alt="boy in mask" />
-            <div class="gallery-photo_overlay">View</div>
-          </a>
-        </li>
-      </ul>
-    </div>
+    <div id="wrapper"></div>
     <footer>
       <div class="social_buttons">
-        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-        <a href="#"><i class="fa fa-telegram" aria-hidden="true"></i></a>
+        <a href="#" draggable="false"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="#" draggable="false"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="#" draggable="false"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href="#" draggable="false"><i class="fa fa-telegram" aria-hidden="true"></i></a>
       </div>
     </footer>
     <script src="js/jquery/jquery-3.4.1.min.js"></script>
     <script src="js/script.js"></script>
     <script>
       $(document).ready(function() {
+        $("#wrapper")
+          .load("./pages/home/home.html");
+
         // menu items toggle
-        $(".navbar_item").mousedown(function() {
+        $(".navbar_item a").click(event => {
+          event.preventDefault();
+        });
+        $(".navbar_item a").mousedown(function(event) {
+          event.preventDefault();
           $(".navbar_item").removeClass("navbar_item__active");
-          $(this).addClass("navbar_item__active");
+          $(this)
+            .parent()
+            .addClass("navbar_item__active");
+            
+// Dynamic change page content
+          $("#wrapper")
+            .hide()
+            .load($(this).attr("href"))
+            .fadeIn("fast");
 
           // PRELOADER GOODS
           // TODO: customize preloader
