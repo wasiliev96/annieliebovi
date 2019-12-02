@@ -142,16 +142,38 @@ h1 {
 }
 /* Gallery  */
 /* TODO: create cool gallery */
+#gallery-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+}
 #gallery {
+  display: flex;
+  height: auto;
+  width: 200%;
   list-style-type: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(6, 1fr);
   height: 320px;
+  animation: slide 20s linear  infinite alternate;
 }
-@media screen and (max-width: 968px) {
-  #gallery {
-    padding: 20px;
-    grid-template-columns: 1fr;
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  96% {
+    opacity: .5;
+  }
+  100%{
+    opacity: 0;
+    transform: translateX(-20%);
   }
 }
 .gallery-photo {
@@ -290,7 +312,7 @@ footer {
   0% {
     opacity: 1;
   }
-  20%{
+  20% {
     opacity: 1;
   }
   30% {
@@ -307,7 +329,7 @@ footer {
   0% {
     opacity: 0;
   }
-  30%{
+  30% {
     opacity: 0;
   }
   40% {

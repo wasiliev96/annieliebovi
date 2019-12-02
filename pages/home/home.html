@@ -1,16 +1,37 @@
-<ul id="gallery">
-  <li class="gallery-photo">
+<div id="gallery-wrapper">
+  <ul id="gallery">
+    <li class="gallery-photo">
       <img src="assets/images/taburette.png" alt="taburette" />
-      <div class="gallery-photo_overlay">
-        <p>View</p>
-      </div>
-  </li>
-  <li class="gallery-photo">
+      <div class="gallery-photo_overlay">View</div>
+    </li>
+    <li class="gallery-photo">
       <img src="assets/images/arc.png" alt="arc" />
       <div class="gallery-photo_overlay">View</div>
-  </li>
-  <li class="gallery-photo">
+    </li>
+    <li class="gallery-photo">
       <img src="assets/images/boy_in_mask.png" alt="boy in mask" />
       <div class="gallery-photo_overlay">View</div>
-  </li>
-</ul>
+    </li>
+
+    <li class="gallery-photo">
+      <img src="assets/images/taburette.png" alt="taburette" />
+      <div class="gallery-photo_overlay">View</div>
+    </li>
+    <li class="gallery-photo">
+      <img src="assets/images/arc.png" alt="arc" />
+      <div class="gallery-photo_overlay">View</div>
+    </li>
+  </ul>
+</div>
+<script>
+  $( "#gallery-wrapper" ).mousedown( function ()
+  {
+    setTimeout( () => { document.getElementById( 'gallery' ).style.webkitAnimationPlayState = 'paused' } );
+  } );
+  $( "#gallery-wrapper" ).mouseleave( function ()
+  {
+    document.getElementById( 'gallery' ).style.webkitAnimationPlayState = 'running';
+  } );
+
+
+</script>
